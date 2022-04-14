@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="cura_login_final" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Katalone_demo" enabled="true">
       <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.3.1.23. Please contact support@blazemeter.com for further support.</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
-      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -15,7 +15,7 @@
         <collectionProp name="HeaderManager.headers">
           <elementProp name="sec-ch-ua" elementType="Header">
             <stringProp name="Header.name">sec-ch-ua</stringProp>
-            <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;100&quot;, &quot;Microsoft Edge&quot;;v=&quot;100&quot;</stringProp>
+            <stringProp name="Header.value">&quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;100&quot;, &quot;Google Chrome&quot;;v=&quot;100&quot;</stringProp>
           </elementProp>
           <elementProp name="sec-ch-ua-mobile" elementType="Header">
             <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
@@ -23,7 +23,7 @@
           </elementProp>
           <elementProp name="Accept" elementType="Header">
             <stringProp name="Header.name">Accept</stringProp>
-            <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+            <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
           </elementProp>
           <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
             <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
@@ -35,7 +35,7 @@
           </elementProp>
           <elementProp name="User-Agent" elementType="Header">
             <stringProp name="Header.name">User-Agent</stringProp>
-            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 Edg/100.0.1185.36</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36</stringProp>
           </elementProp>
         </collectionProp>
       </HeaderManager>
@@ -89,169 +89,26 @@
         <boolProp name="CacheManager.controlledByThread">false</boolProp>
       </CacheManager>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Users" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">15</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">12</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">0</stringProp>
         <stringProp name="ThreadGroup.delay">0</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="CURAHealthcareServiceTest" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Homepage" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetHomePage" enabled="true">
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">profile.php#login</stringProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-              <stringProp name="RandomTimer.range">0.0</stringProp>
-              <stringProp name="ConstantTimer.delay">0</stringProp>
-              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
-            </UniformRandomTimer>
-            <hashTree/>
-          </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="login" enabled="true"/>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login" enabled="true">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="password" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.name">password</stringProp>
-                    <stringProp name="Argument.value">ThisIsNotAPassword</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="username" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.name">username</stringProp>
-                    <stringProp name="Argument.value">John Doe</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">authenticate.php</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Content-Type" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-                <stringProp name="RandomTimer.range">15091.0</stringProp>
-                <stringProp name="ConstantTimer.delay">7545.5</stringProp>
-                <stringProp name="TestPlan.comments">Recorded time was 15091 milliseconds</stringProp>
-              </UniformRandomTimer>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="bookAppointment" enabled="true">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="comment" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.name">comment</stringProp>
-                    <stringProp name="Argument.value">qwerty</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="programs" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.name">programs</stringProp>
-                    <stringProp name="Argument.value">Medicare</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="facility" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.name">facility</stringProp>
-                    <stringProp name="Argument.value">Tokyo CURA Healthcare Center</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="visit_date" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                    <stringProp name="Argument.name">visit_date</stringProp>
-                    <stringProp name="Argument.value">20/04/2022</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">appointment.php#summary</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Content-Type" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-                <stringProp name="RandomTimer.range">35993.0</stringProp>
-                <stringProp name="ConstantTimer.delay">17996.5</stringProp>
-                <stringProp name="TestPlan.comments">Recorded time was 35993 milliseconds</stringProp>
-              </UniformRandomTimer>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="backToHome" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://katalon-demo-cura.herokuapp.com/" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -271,88 +128,282 @@
           </HTTPSamplerProxy>
           <hashTree>
             <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-              <stringProp name="RandomTimer.range">9712.0</stringProp>
-              <stringProp name="ConstantTimer.delay">4856</stringProp>
-              <stringProp name="TestPlan.comments">Recorded time was 9712 milliseconds</stringProp>
+              <stringProp name="RandomTimer.range">0.0</stringProp>
+              <stringProp name="ConstantTimer.delay">0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-            <boolProp name="ResultCollector.error_logging">false</boolProp>
-            <objProp>
-              <name>saveConfig</name>
-              <value class="SampleSaveConfiguration">
-                <time>true</time>
-                <latency>true</latency>
-                <timestamp>true</timestamp>
-                <success>true</success>
-                <label>true</label>
-                <code>true</code>
-                <message>true</message>
-                <threadName>true</threadName>
-                <dataType>true</dataType>
-                <encoding>false</encoding>
-                <assertions>true</assertions>
-                <subresults>true</subresults>
-                <responseData>false</responseData>
-                <samplerData>false</samplerData>
-                <xml>false</xml>
-                <fieldNames>true</fieldNames>
-                <responseHeaders>false</responseHeaders>
-                <requestHeaders>false</requestHeaders>
-                <responseDataOnError>false</responseDataOnError>
-                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                <assertionsResultsToSave>0</assertionsResultsToSave>
-                <bytes>true</bytes>
-                <sentBytes>true</sentBytes>
-                <url>true</url>
-                <threadCounts>true</threadCounts>
-                <idleTime>true</idleTime>
-                <connectTime>true</connectTime>
-              </value>
-            </objProp>
-            <stringProp name="filename"></stringProp>
-          </ResultCollector>
-          <hashTree/>
-          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
-            <boolProp name="ResultCollector.error_logging">false</boolProp>
-            <objProp>
-              <name>saveConfig</name>
-              <value class="SampleSaveConfiguration">
-                <time>true</time>
-                <latency>true</latency>
-                <timestamp>true</timestamp>
-                <success>true</success>
-                <label>true</label>
-                <code>true</code>
-                <message>true</message>
-                <threadName>true</threadName>
-                <dataType>true</dataType>
-                <encoding>false</encoding>
-                <assertions>true</assertions>
-                <subresults>true</subresults>
-                <responseData>false</responseData>
-                <samplerData>false</samplerData>
-                <xml>false</xml>
-                <fieldNames>true</fieldNames>
-                <responseHeaders>false</responseHeaders>
-                <requestHeaders>false</requestHeaders>
-                <responseDataOnError>false</responseDataOnError>
-                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                <assertionsResultsToSave>0</assertionsResultsToSave>
-                <bytes>true</bytes>
-                <sentBytes>true</sentBytes>
-                <url>true</url>
-                <threadCounts>true</threadCounts>
-                <idleTime>true</idleTime>
-                <connectTime>true</connectTime>
-              </value>
-            </objProp>
-            <stringProp name="filename"></stringProp>
-          </ResultCollector>
-          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://katalon-demo-cura.herokuapp.com/profile.php#login" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">profile.php#login</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">18177.0</stringProp>
+              <stringProp name="ConstantTimer.delay">9088.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 18177 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://katalon-demo-cura.herokuapp.com/authenticate.php" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">ThisIsNotAPassword</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                  <stringProp name="Argument.value">John Doe</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">authenticate.php</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">1638.0</stringProp>
+              <stringProp name="ConstantTimer.delay">8219</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 16438 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Make appointment" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://katalon-demo-cura.herokuapp.com/appointment.php#summary" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="hospital_readmission" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">hospital_readmission</stringProp>
+                  <stringProp name="Argument.value">Yes</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="comment" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">comment</stringProp>
+                  <stringProp name="Argument.value">fsds</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="programs" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">programs</stringProp>
+                  <stringProp name="Argument.value">Medicare</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="facility" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">facility</stringProp>
+                  <stringProp name="Argument.value">Tokyo CURA Healthcare Center</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="visit_date" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">visit_date</stringProp>
+                  <stringProp name="Argument.value">28/04/2022</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">appointment.php#summary</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">2886.0</stringProp>
+              <stringProp name="ConstantTimer.delay">14443</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 28886 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Goto homepage" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://katalon-demo-cura.herokuapp.com/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path"></stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">2111.0</stringProp>
+              <stringProp name="ConstantTimer.delay">5595.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 11191 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Logout" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://katalon-demo-cura.herokuapp.com/authenticate.php?logout" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="logout" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">logout</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">authenticate.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="RandomTimer.range">16172.0</stringProp>
+              <stringProp name="ConstantTimer.delay">8086</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 16172 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
         </hashTree>
       </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
